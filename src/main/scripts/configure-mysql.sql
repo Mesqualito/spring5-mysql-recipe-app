@@ -1,4 +1,6 @@
 ## Use to run mysql db docker image, optional if you're not using a local mysqldb
+# see: https://bugs.mysql.com/bug.php?id=91395 and https://docs.docker.com/config/containers/resource_constraints/
+# and: https://github.com/moby/moby/issues/25885
 # only dev: docker run --name mysqldb -p 3306:3306 --cap-add SYS_NICE -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql
 # prod min.: docker run --name mysqldb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
 
