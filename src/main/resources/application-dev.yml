@@ -1,0 +1,24 @@
+# in IDEA Run-Configuration: set "Active Profile" to "dev"
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sfg_dev
+    username: sfg_dev_user
+    # in (local) dev it may not harm to set password here
+    password: password
+  jpa:
+    hibernate:
+      # in dev: could be set higher than only check the db-schema ("validate")
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    # in dev: show sql-statements for checks in logs
+    show-sql: true
+    # on run: will build the script for dev-mysql-database in file 'mysql_database_create.sql'
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: create
+              create-target: mysql_database_create.sql
