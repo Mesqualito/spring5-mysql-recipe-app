@@ -13,12 +13,13 @@ spring:
     database: mysql
     # in dev: show sql-statements for checks in logs
     show-sql: true
-    # on run: will build the script for dev-mysql-database in file 'mysql_database_create.sql'
-    properties:
-      javax:
-        persistence:
-          schema-generation:
-            create-source: metadata
-            scripts:
-              action: create
-              create-target: mysql_database_create.sql
+    # on first run: will build the script for dev-mysql-database in file 'mysql_database_create.sql'
+    # then: comment it out...
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: mysql_database_create.sql
