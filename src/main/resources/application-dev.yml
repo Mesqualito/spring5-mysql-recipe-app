@@ -5,6 +5,7 @@ spring:
     username: sfg_dev_user
     # in (local) dev it may not harm to set password here
     password: password
+    platform: mysql
   jpa:
     hibernate:
       # in dev: could be set higher than only check the db-schema ("validate")

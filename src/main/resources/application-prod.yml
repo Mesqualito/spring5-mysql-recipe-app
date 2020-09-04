@@ -5,6 +5,7 @@ spring:
     # do NOT set password in the password-file in prod, use gitignored .env-files or env-variables at min.
     # or even better: encryption!
     password: password
+    platform: mysql
   jpa:
     hibernate:
       # in production: do not allow ddl-changes through hibernate!
